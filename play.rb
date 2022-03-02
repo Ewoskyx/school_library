@@ -41,3 +41,8 @@ case6 = rent3.person.name
 puts "Rental 3 belongs to person #{case6}"
 case7 = rent2.person.name
 puts "Rental 2 belongs to person #{case7}"
+
+# The person itself should be sent as a parameter to create the new rental achieving the 'has-many' association
+std1.add_rental(book1, "2022-3-3")
+case8 = std1.rentals.last.book.title
+puts "Student 1 did rent #{case8} by using add_rental method"
