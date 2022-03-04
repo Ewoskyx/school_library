@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 # Imports
+require 'pry'
 require './book'
 require './student'
 require './teacher'
@@ -150,12 +151,14 @@ end
                6 => method(:list_rentals_for_id), 7 => method(:exit) }
 def init()
   menu
-  selection = gets.chomp.to_i
+  selection = gets.chomp
   if selection.positive? && selection <= 7
     @menu_hash[selection].call
+    binding.pry
   else
     puts 'Wrong input !'
   end
 end
 
 init
+binding.pry
