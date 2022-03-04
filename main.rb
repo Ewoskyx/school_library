@@ -154,11 +154,9 @@ def init()
   selection = gets.chomp
   if selection.positive? && selection <= 7
     @menu_hash[selection].call
-    binding.pry
   else
     puts 'Wrong input !'
   end
 end
 
 init
-binding.pry
